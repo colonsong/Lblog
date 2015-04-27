@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\BlogContent;
 
 Route::get('/', 'WelcomeController@index');
 
@@ -19,3 +20,19 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/blog',function()
+{
+	$blogContents = BlogContent::all();
+	print_r($blogContents);
+	$result = '';
+
+  //return View::make('blog');
+	//return 'Hello World';
+
+});
+
+Route::get('debug',function()
+{
+  return 'debug';
+});
