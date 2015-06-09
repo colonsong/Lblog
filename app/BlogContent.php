@@ -6,5 +6,7 @@ class BlogContent extends Model {
 
 	//
 	protected $table = 'blogContents';
+	//自定義primary key
+	protected $primaryKey = 'blogContents_id';
 
 }

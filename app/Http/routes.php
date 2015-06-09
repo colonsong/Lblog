@@ -23,8 +23,9 @@ Route::controllers([
 
 Route::get('/blog',function()
 {
-	$blogContents = BlogContent::all();
-	print_r($blogContents);
+	//$blogContents = BlogContent::all();
+	$first_post = BlogContent::find(1);
+	print_r($first_post);
 	$result = '';
 
   //return View::make('blog');
