@@ -9,13 +9,18 @@
     <div class="form-group">
       {!! Form::label('name','標題：') !!}
       <!-- element,default value,params -->
-      {!! Form::text('title',null,['class'=>'form-control','data-example'=>'example data']) !!}
+      {!! Form::text('title',null,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
       {!! Form::label('contents','內容：') !!}
       <!-- element,default value,params -->
       {!! Form::textarea('contents',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+      {!! Form::label('published_at','發佈時間：') !!}
+      {!! Form::input('date','published_at',date('Y-m-d'),['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">

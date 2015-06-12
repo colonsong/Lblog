@@ -16,8 +16,10 @@ class ArticlesController extends Controller
     public function index()
     {
       //$articles = Article::all();
-      $articles = Article::latest('published_at')->get();
+      //$articles = Article::latest('published_at')->get();
       //$articles = Article::order_by('published_at','desc')->get();
+      // $articles = Article::latest('published_at')->where('published_at','<=',Carbon::now())->get();
+      $articles = Article::latest('published_at')->published()->get();
       return view('articles.index',compact('articles'));
       //or
       //return view('articles.index')->with('articles',$articles);
@@ -28,6 +30,13 @@ class ArticlesController extends Controller
     {
       $article = Article::findOrFail($id);
       //dd($article);
+        //string
+        dd($article->published_at);
+        //Carbon Object
+        //dd($article->created_at);
+        //Carbon可以做很多的轉換
+        //$article->created_at->year; //month addDays(8) format('Y-m-d');
+        //diffForHumans 這比較特別 5 days ago
       //return $article;
       return view('articles.show',compact('article'));
     }
@@ -39,12 +48,12 @@ class ArticlesController extends Controller
 
     public function store()
     {
-      $input = Request::all();
+      //$input = Request::all();
       //沒有轉成Carbon::now格式的話這欄位不會寫入
-      $input['published_at'] = Carbon::now();
+      //$input['published_at'] = Carbon::now();
       //$input = Request::get('title');
 
-      Article::create($input);
+      Article::create(Request::all());
       return redirect('articles');
     }
 }
