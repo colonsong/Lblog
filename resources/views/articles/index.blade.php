@@ -6,7 +6,13 @@
 
   @foreach ($articles as $article)
     <article>
-      <h2>{{$article->title}}</h2>
+      <h2>
+        <!--<a href="./article/{{$article->id}}">{{$article->title}}</a>-->
+        <!-- <a href="{{ action('ArticlesController@show',[$article->id])}}">{{$article->title}}</a>-->
+        <!-- <a href="./article/{{$article->id}}">{{$article->title}}</a> -->
+        <a href="{{url('./article',$article->id)}}">{{$article->title}}</a>
+
+      </h2>
       <div calss="contents">{{$article->contents}}</div>
     </article>
 

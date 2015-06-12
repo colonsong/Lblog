@@ -16,3 +16,9 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('articles','ArticlesController@index');
+
+Route::get('article/create','ArticlesController@create');
+
+Route::get('article/{id}','ArticlesController@show');
+
+Route::post('articles','ArticlesController@store');

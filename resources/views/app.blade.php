@@ -13,6 +13,6 @@
       @yield('content')
     </div>
 
-    @yield('footer');
+    @yield('footer')
   </body>
 </html>
