@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//
 //use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Carbon\Carbon;
 use App\Http\Requests\CreateArticleRequest;
+// read global request
+//use Request;
 
 
 
